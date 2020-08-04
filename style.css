@@ -1,0 +1,56 @@
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+  
+  .group{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .item{
+    text-align: center;
+    flex: 1;
+  }
+  
+  header{
+    height: 100px;
+    top: 0px;
+    background: url(img/cloth.jpg);
+    font-size: 38px;
+    position: fixed;
+    width: 100%;
+  }
+  
+  main{
+    margin-top: 120px;
+  }
+  
+  label{
+    font-size: 15px;
+  }
+  
+  h1{
+    font-family: 'Caveat', cursive;
+    letter-spacing: 18px;
+  } 
+  
+  h3{
+    margin: 0;
+  }
+  
+  
+  ul{
+    list-style-type: none;
+  }
+  
+  #submit{
+  margin-bottom: 40px;
+  }
+  
+  .grapes{
+    width: 60%;
+    filter: grayscale(95%) opacity(60%) contrast(300%);
+  }

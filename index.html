@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="normalize.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+
+    <div class="head">
+    <header>
+      <h1>
+        Munchify
+      </h1>
+    </header>
+    </div>
+
+
+    <main>
+      <form>
+      <div class="group">
+        
+        <div class="item">
+          <h2>
+            Find the perfect recipe for you!
+          </h2>
+        </div>
+        
+        <div class="item">
+          <h3>General Search</h3>
+          
+          <input id="searchTerm" type="text" placeholder="Pasta, Chicken, Veggies...">
+        </div>
+
+        <br>
+        
+        <div class="item">
+          <h3>Cuisine</h3>
+          <select id="cuisine" size="5">
+            <option value="">Any</option>
+            <option value="african">African</option>
+            <option value="american">American</option>
+            <option value="british">British</option>
+            <option value="cajun">Cajun</option>
+            <option value="caribbean">Caribbean</option>
+            <option value="chinese">Chinese</option>
+            <option value="'eastern european'">Eastern European</option>
+            <option value="european">European</option>
+            <option value="french">French</option>
+            <option value="german">German</option>
+            <option value="greek">Greek</option>
+            <option value="indian">Indian</option>
+            <option value="irish">Irish</option>
+            <option value="italian">Italian</option>
+            <option value="japanese">Japanese</option>
+            <option value="jewish">Jewish</option>
+            <option value="korean">Korean</option>
+            <option value="'latin american'">Latin American</option>
+            <option value="mediterranean">Mediterranean</option>
+            <option value="mexican">Mexican</option>
+            <option value="'middle eastern'">Middle Eastern</option>
+            <option value="nordic">Nordic</option>
+            <option value="southern">Southern</option>
+            <option value="spanish">Spanish</option>
+            <option value="thai">Thai</option>
+            <option value="vietnamese">Viatnamese</option>
+          </select>
+        </div>
+
+        <br>
+          
+         <div class="item">
+          <h3>Diet</h3>
+          <select id="diet" size="3">
+            <option value="">Any</option>
+            <option value="'gluten free'">Gluten Free</option>
+            <option value="ketogenic">Ketogenic</option>
+            <option value="vegetarian">Vegetarian</option>
+            <option value="lacto-vegetarian">Lacto-Vegetarian</option>
+            <option value="ovo-vegetarian">Ovo-Vegetarian</option>
+            <option value="vegan">Vegan</option>
+            <option value="pescetarian">Pescetarian</option>
+            <option value="paleo">Paleo</option>
+            <option value="Primal">Primal</option>
+            <option value="whole30">Whole30</option>
+          </select>
+        </div>
+        <br>
+
+        <div class="item">
+           <h3>Intolerances</h3>
+           <input type="checkbox" class="check-list" value="dairy">
+           <label for="dairy">Dairy</label>
+           <input type="checkbox" class="check-list" value="egg">
+           <label for="egg">Eggs</label>
+           <input type="checkbox" class="check-list" value="gluten">
+           <label for="gluten">Gluten</label>
+           <input type="checkbox" class="check-list" value="grain">
+           <label for="grain">Grains</label>
+           <br>
+           <input type="checkbox" class="check-list" value="peanut">
+           <label for="peanut">Peanuts</label>
+           <input type="checkbox" class="check-list" value="seafood">
+           <label for="seafood">Seafood</label>
+           <input type="checkbox" class="check-list" value="sesame">
+           <label for="sesame">Sesame</label>
+           <input type="checkbox" class="check-list" value="shellfish">
+           <label for="shellfish">Shellfish</label>
+           <br>
+           <input type="checkbox" class="check-list" value="soy">
+           <label for="soy">Soy</label>
+           <input type="checkbox" class="check-list" value="sulfite">
+           <label for="sulfite">Sulfite</label>
+           <input type="checkbox" class="check-list" value="'tree nut'">
+           <label for="treeNut">Tree Nuts</label>
+           <input type="checkbox" class="check-list" value="wheat">
+           <label for="wheat">Wheat</label>
+        </div>
+
+        <br>
+        <br>
+
+        <div class="item numerical-inputs">
+          <label for="min-calories">Min. Calories</label>
+          <br>
+          <input type="number" id="min-calories" min="0">
+          <br>
+        
+          <label for="max-calories">Max. Calories</label>
+          <br>
+          <input type="number" id="max-calories" min="0">
+          <br>
+        
+          <label for="min-protein">Min. Protein (grams)</label>
+          <br>
+          <input type="number" id="min-protein" min="0">
+          <br>
+       
+          <label for="max-protein">Max. Protein (grams)</label>
+          <br>
+          <input type="number" id="max-protein" min="0">
+          <br>
+
+          <label for="min-carbs">Min. Carbs (grams)</label>
+          <br>
+          <input type="number" id="min-carbs" min="0">
+          <br>
+
+          <label for="max-carbs">Max. Carbs (grams)</label>
+          <br>
+          <input type="number" id="max-carbs" min="0">     
+          <br>   
+        
+          <label for="min-fat">Min. Fat (grams)</label>
+          <br>
+          <input type="number" id="min-fat" min="0">
+          <br>
+        
+          <label for="max-fat">Max. Fat (grams)</label>
+          <br>
+          <input type="number" id="max-fat" min="0">
+          <br>
+        </div>
+
+        <br>
+        
+        <div class="item">
+          <input id="submit" type="submit" value="Find Recipes!">
+        </div>
+        
+      </div>
+      </form>
+
+      <div class="item">
+      <img class="grapes" src="img/grapes.png" alt="a grape vine">
+      </div>
+
+      <section id="results">
+      </section>
+
+
+    </main>
+
+
+    
+    
+    <script
+  src="https://code.jquery.com/jquery-3.5.1.js"
+  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
