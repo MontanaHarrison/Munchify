@@ -1,56 +1,187 @@
 * {
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/*----------Mobile First----------*/
+.group{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.item{
+  text-align: center;
+  flex: 1;
+}
+
+.hidden{
+  filter: opacity(0%);
+  margin-bottom: 0;
+  margin-top: 0;
+  padding-top: 0px;
+  padding-bottom: 70px;
+}
+
+
+header{
+  height: 70px;
+  top: 0px;
+  background: url(img/cloth.jpg);
+  font-size: 28px;
+  position: fixed;
+  width: 100%;
+  z-index: 3;
+  background-color: rgba(248, 240, 204, 0.199);
+
+}
+
+footer{
+  text-align: center;
+}
+
+.footer{
+  font-family: 'Caveat', cursive;
+}
+
+.down{
+  margin-top: 100px;
+}
+
+
+form{
+  z-index: 1;
+}
+
+main{
+  z-index: 1;
+  background-image: url(img/speckles.png);
+  backdrop-filter: sepia(100%);
+  background-attachment: fixed;
+}
+
+label{
+  font-size: 15px;
+}
+
+select{
+  border-radius: 7px;
+  border: solid 2px black;
+}
+
+option{
+  margin: 5px;
+}
+
+input{
+  border-radius: 7px;
+  border: solid 2px black;
+}
+
+h1{
+  font-family: 'Caveat', cursive;
+  letter-spacing: -4px;
+} 
+
+h2{
+  font-family: 'Caveat', cursive;
+  font-size: 30px;
+  letter-spacing: 4px;
+}
+
+h3{
+  margin: 0;
+}
+
+.grapes{
+  width: 60%;
+  filter: grayscale(80%) opacity(60%) contrast(300%);
+  z-index: 2;
+}
+
+ul{
+  list-style-type: none;
+  width: 90%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+#submit{
+margin-bottom: 40px;
+border: 1px solid black;
+}
+
+.result-img{
+  width: 80%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.452);
+}
+
+.cooking-img{
+  width: 80%;
+}
+
+.result-info{
+  text-align: left;
+}
+
+p a{
+  color: black;
+  pointer-events: none;
+  cursor: default;
+}
+
+a{
+  text-decoration: none;
+}
+
+a:hover {color: rgba(116, 73, 24, 0.568); }
+
+footer{
+  text-align: center;
+  padding: 20px;
+}
+
+footer a{
+  font-family: 'Caveat', cursive;
+  font-size: 30px;
+}
+
+.hiddenFooter{
+  display: none;
+}
+
+
+
+/*----------Desktop/Tablet View----------*/
+@media all and (min-width: 800px) {
+  h2{
+    font-size: 40px;
   }
-  
-  .group{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .item{
-    text-align: center;
-    flex: 1;
-  }
-  
-  header{
-    height: 100px;
-    top: 0px;
-    background: url(img/cloth.jpg);
-    font-size: 38px;
-    position: fixed;
-    width: 100%;
-  }
-  
-  main{
-    margin-top: 120px;
-  }
-  
-  label{
-    font-size: 15px;
-  }
-  
-  h1{
-    font-family: 'Caveat', cursive;
-    letter-spacing: 18px;
-  } 
-  
+
   h3{
-    margin: 0;
+    font-size: 25px;
   }
-  
-  
-  ul{
-    list-style-type: none;
+
+  option{
+    font-size: 20px;
   }
-  
+
+  label{
+    font-size: 20px;
+  }
+
   #submit{
-  margin-bottom: 40px;
+    font-size: 20px;
   }
-  
-  .grapes{
+
+  ul{
     width: 60%;
-    filter: grayscale(95%) opacity(60%) contrast(300%);
   }
+
+  .result-img{
+    width: 40%;
+  }
+}

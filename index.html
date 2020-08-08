@@ -12,27 +12,22 @@
 
     <div class="head">
     <header>
-      <h1>
-        Munchify
-      </h1>
+      <h1>Munchify</h1>
     </header>
     </div>
-
 
     <main>
       <form>
       <div class="group">
-        
-        <div class="item">
-          <h2>
-            Find the perfect recipe for you!
-          </h2>
+        <div class="item down">
+          <h2>Find the perfect recipe for you!</h2>
+          <p>Make a search using none, one, or more of the criteria!</p>
         </div>
-        
+
+        <!--User inputs and selections-->
         <div class="item">
           <h3>General Search</h3>
-          
-          <input id="searchTerm" type="text" placeholder="Pasta, Chicken, Veggies...">
+            <input id="searchTerm" type="text" placeholder="Pasta, Chicken, Veggies...">
         </div>
 
         <br>
@@ -88,6 +83,7 @@
             <option value="whole30">Whole30</option>
           </select>
         </div>
+
         <br>
 
         <div class="item">
@@ -128,37 +124,30 @@
           <br>
           <input type="number" id="min-calories" min="0">
           <br>
-        
           <label for="max-calories">Max. Calories</label>
           <br>
           <input type="number" id="max-calories" min="0">
           <br>
-        
           <label for="min-protein">Min. Protein (grams)</label>
           <br>
           <input type="number" id="min-protein" min="0">
           <br>
-       
           <label for="max-protein">Max. Protein (grams)</label>
           <br>
           <input type="number" id="max-protein" min="0">
           <br>
-
           <label for="min-carbs">Min. Carbs (grams)</label>
           <br>
           <input type="number" id="min-carbs" min="0">
           <br>
-
           <label for="max-carbs">Max. Carbs (grams)</label>
           <br>
           <input type="number" id="max-carbs" min="0">     
           <br>   
-        
           <label for="min-fat">Min. Fat (grams)</label>
           <br>
           <input type="number" id="min-fat" min="0">
           <br>
-        
           <label for="max-fat">Max. Fat (grams)</label>
           <br>
           <input type="number" id="max-fat" min="0">
@@ -166,27 +155,29 @@
         </div>
 
         <br>
-        
+
+        <!--Submit button-->
         <div class="item">
           <input id="submit" type="submit" value="Find Recipes!">
         </div>
-        
+
+        <!--Some grapes to seperate the inputs from the results-->
+        <div class="item">
+          <img class="grapes" id="scroll" src="img/grapes.png" alt="a grape vine">
+        </div>
       </div>
       </form>
 
-      <div class="item">
-      <img class="grapes" src="img/grapes.png" alt="a grape vine">
-      </div>
-
+      <!--Area where API results get .appeneded()-->
       <section id="results">
       </section>
 
-
+      <!--The footer is going to remain hidden until the results get appended for styling purposes/ Will allow user to automatically revert back to the top of the page-->
+      <footer>
+        <a id="hiddenFooter" class="hiddenFooter" href="#scroll">Back to top!</a>
+      </footer>
     </main>
 
-
-    
-    
     <script
   src="https://code.jquery.com/jquery-3.5.1.js"
   integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="

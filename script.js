@@ -2,9 +2,7 @@ const api="7cc28bfe20c24537be6bc0924604b09c"
 const searchURL="https://api.spoonacular.com/recipes/complexSearch"
 
 
-
-
-
+//Using GET to recieve info from API within certain parameters
 function getRecipes(query, cuisine, diet, minCalories, maxCalories, minProtein, maxProtein, minCarbs, maxCarbs, minFat, maxFat) {
  
   if (maxCalories.length <=0)
@@ -46,6 +44,7 @@ function getRecipes(query, cuisine, diet, minCalories, maxCalories, minProtein, 
     addRecipeInformation: true,
     apiKey: api
   };
+
   const queryString = formatQueryParams(params)
   const url = searchURL + '?' + queryString
   console.log(url)
@@ -57,8 +56,7 @@ function getRecipes(query, cuisine, diet, minCalories, maxCalories, minProtein, 
 }
 
 
-
-
+//Allows the parameters to be formated easily into the sent request URL
 function formatQueryParams(params) {
   const queryItems = Object.keys(params)
   .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`);
@@ -66,33 +64,34 @@ function formatQueryParams(params) {
 }
 
 
-
-
-
+//Adds content to the DOM, allows footer to be seen, and automatically scrolls down towards results
 function displayResults(responseJson) {
   console.log(responseJson)
   $('#results').empty();
   for (let i = 0; i < responseJson.results.length; i++) {
     $('#results').append(
-        `<ul>
-          <li><h3>${responseJson.results[i].title}</h3></li>
-          <img src="${responseJson.results[i].image}">
-          <p>${responseJson.results[i].summary}</p>
-          <p>${responseJson.results[i].nutrition[0].title} ${responseJson.results[i].nutrition[0].amount}</p>
-          <p>${responseJson.results[i].nutrition[1].title} ${responseJson.results[i].nutrition[1].amount}</p>
-          <p>${responseJson.results[i].nutrition[2].title} ${responseJson.results[i].nutrition[2].amount}</p>
-          <p>${responseJson.results[i].nutrition[3].title} ${responseJson.results[i].nutrition[3].amount}</p>
-          <p>Find out how to make it here:</p>
-          <a href="${responseJson.results[i].sourceUrl}" target="\_blank">${responseJson.results[i].sourceUrl}</a>
-        </ul>`
-    )
-  };
+        `<form>
+          <ul>
+            <li><a href="${responseJson.results[i].sourceUrl}" target="\_blank"><h2>${responseJson.results[i].title}</h2></a></li>
+            <img src="${responseJson.results[i].image}" class="result-img">
+            <p class="result-info">${responseJson.results[i].summary}</p>
+            <p class="result-info">${responseJson.results[i].nutrition[0].title} ${responseJson.results[i].nutrition[0].amount}</p>
+            <p class="result-info"> ${responseJson.results[i].nutrition[1].title} ${responseJson.results[i].nutrition[1].amount}</p>
+            <p class="result-info">${responseJson.results[i].nutrition[2].title} ${responseJson.results[i].nutrition[2].amount}</p>
+            <p class="result-info">${responseJson.results[i].nutrition[3].title} ${responseJson.results[i].nutrition[3].amount}</p>
+            <img src="img/cooking.png" class="cooking-img">
+          </ul>
+        </form>`
+    )};
+
+  $('#hiddenFooter').removeClass('hiddenFooter');
+
+  const elmnt = document.getElementById("scroll");
+  elmnt.scrollIntoView({behavior: 'smooth'});
 }
 
 
-
-
-
+//Takes values from user inputs, watches for 'submit' button to be used, and then runs the getRecipes function
 function watchForm() {
   $('form').submit(event => {
     event.preventDefault();
@@ -112,4 +111,6 @@ function watchForm() {
   });
 } 
 
+
+//Runs the watchFrom function
 $(watchForm);
