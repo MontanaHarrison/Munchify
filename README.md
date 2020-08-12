@@ -1,6 +1,6 @@
 # Munchify
 Find the perfect recipe for you! 
-Check it out here: https://montanaharrison.github.io/Munchify/
+Check it out here: https://montanaharrison.github.io/munchify/
 
 ## Summary:
 Munchify is a simple web application that utilizes the Spoonacular API.
