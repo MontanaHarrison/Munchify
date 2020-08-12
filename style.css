@@ -79,6 +79,10 @@ input{
   border: solid 2px black;
 }
 
+.intolSpace{
+  margin-bottom: -10px;
+}
+
 h1{
   font-family: 'Caveat', cursive;
   letter-spacing: -4px;
@@ -153,10 +157,23 @@ footer a{
   display: none;
 }
 
+.factBold{
+  font-weight: bold;
+}
+
+.factItalic{
+  font-style: italic;
+}
+
+
 
 
 /*----------Desktop/Tablet View----------*/
 @media all and (min-width: 800px) {
+  p{
+    text-align: center;
+  }
+
   h2{
     font-size: 40px;
   }

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>repl.it</title>
+    <title>Munchify</title>
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">
     <link href="style.css" rel="stylesheet" type="text/css" />
     <link href="normalize.css" rel="stylesheet" type="text/css" />
@@ -88,69 +88,91 @@
 
         <div class="item">
            <h3>Intolerances</h3>
-           <input type="checkbox" class="check-list" value="dairy">
+           <div class="intolSpace">
+           <input type="checkbox" class="check-list" value="dairy" id="dairy">
            <label for="dairy">Dairy</label>
-           <input type="checkbox" class="check-list" value="egg">
+           <input type="checkbox" class="check-list" value="egg" id="egg">
            <label for="egg">Eggs</label>
-           <input type="checkbox" class="check-list" value="gluten">
+           <input type="checkbox" class="check-list" value="gluten" id="gluten">
            <label for="gluten">Gluten</label>
-           <input type="checkbox" class="check-list" value="grain">
+           <input type="checkbox" class="check-list" value="grain" id="grain">
            <label for="grain">Grains</label>
+           </div>
            <br>
-           <input type="checkbox" class="check-list" value="peanut">
+           <div class="intolSpace">
+           <input type="checkbox" class="check-list" value="peanut" id="peanut">
            <label for="peanut">Peanuts</label>
-           <input type="checkbox" class="check-list" value="seafood">
+           <input type="checkbox" class="check-list" value="seafood" id="seafood">
            <label for="seafood">Seafood</label>
-           <input type="checkbox" class="check-list" value="sesame">
+           <input type="checkbox" class="check-list" value="sesame" id="sesame">
            <label for="sesame">Sesame</label>
-           <input type="checkbox" class="check-list" value="shellfish">
+           <input type="checkbox" class="check-list" value="shellfish" id="shellfish">
            <label for="shellfish">Shellfish</label>
+           </div>
            <br>
-           <input type="checkbox" class="check-list" value="soy">
+           <div class="intolSpace">
+           <input type="checkbox" class="check-list" value="soy" id="soy">
            <label for="soy">Soy</label>
-           <input type="checkbox" class="check-list" value="sulfite">
+           <input type="checkbox" class="check-list" value="sulfite" id="sulfite">
            <label for="sulfite">Sulfite</label>
-           <input type="checkbox" class="check-list" value="'tree nut'">
+           <input type="checkbox" class="check-list" value="'tree nut'" id="treeNut">
            <label for="treeNut">Tree Nuts</label>
-           <input type="checkbox" class="check-list" value="wheat">
+           <input type="checkbox" class="check-list" value="wheat" id="wheat">
            <label for="wheat">Wheat</label>
+           </div>
         </div>
 
         <br>
         <br>
 
         <div class="item numerical-inputs">
-          <label for="min-calories">Min. Calories</label>
+          <div class="num">
+          <label  for="min-calories">Min. Calories</label>
           <br>
           <input type="number" id="min-calories" min="0">
+          </div>
           <br>
-          <label for="max-calories">Max. Calories</label>
+          <div class="num">
+          <label  for="max-calories">Max. Calories</label>
           <br>
           <input type="number" id="max-calories" min="0">
+          </div>
           <br>
-          <label for="min-protein">Min. Protein (grams)</label>
+          <div class="num">
+          <label  for="min-protein">Min. Protein (grams)</label>
           <br>
           <input type="number" id="min-protein" min="0">
+          </div>
           <br>
-          <label for="max-protein">Max. Protein (grams)</label>
+          <div class="num">
+          <label  for="max-protein">Max. Protein (grams)</label>
           <br>
           <input type="number" id="max-protein" min="0">
+          </div>
           <br>
-          <label for="min-carbs">Min. Carbs (grams)</label>
+          <div class="num">
+          <label  for="min-carbs">Min. Carbs (grams)</label>
           <br>
           <input type="number" id="min-carbs" min="0">
+          </div>
           <br>
-          <label for="max-carbs">Max. Carbs (grams)</label>
+          <div class="num">
+          <label  for="max-carbs">Max. Carbs (grams)</label>
           <br>
-          <input type="number" id="max-carbs" min="0">     
-          <br>   
-          <label for="min-fat">Min. Fat (grams)</label>
+          <input type="number" id="max-carbs" min="0"> 
+          </div>    
+          <br>
+          <div class="num">
+          <label  for="min-fat">Min. Fat (grams)</label>
           <br>
           <input type="number" id="min-fat" min="0">
+          </div>
           <br>
-          <label for="max-fat">Max. Fat (grams)</label>
+          <div class="num">
+          <label  for="max-fat">Max. Fat (grams)</label>
           <br>
           <input type="number" id="max-fat" min="0">
+          </div>
           <br>
         </div>
 
@@ -175,8 +197,10 @@
       <!--The footer is going to remain hidden until the results get appended for styling purposes/ Will allow user to automatically revert back to the top of the page-->
       <footer>
         <a id="hiddenFooter" class="hiddenFooter" href="#scroll">Back to top!</a>
+        <section id="factResult"></section>
       </footer>
     </main>
+
 
     <script
   src="https://code.jquery.com/jquery-3.5.1.js"

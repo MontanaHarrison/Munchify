@@ -47,12 +47,25 @@ function getRecipes(query, cuisine, diet, minCalories, maxCalories, minProtein, 
 
   const queryString = formatQueryParams(params)
   const url = searchURL + '?' + queryString
-  console.log(url)
     fetch(url)
       .then(response => response.json())
       .then(responseJson =>
         displayResults(responseJson))
-      .catch(error => alert('Error. Try again later.'))
+      .catch(error => 
+        $('#results').append(
+          '<p>There appears to be an error. Try again later.</p>'
+        ))
+}
+
+
+//Using GET to acquire a simple response from the same API
+function getFact() {
+  const urlFact = `https://api.spoonacular.com/food/trivia/random?apiKey=${api}`
+  fetch(urlFact)
+    .then(response => response.json())
+    .then(responseJson =>
+      displayFactResult(responseJson))
+    .catch(error => alert('Fact did not load')) 
 }
 
 
@@ -66,32 +79,45 @@ function formatQueryParams(params) {
 
 //Adds content to the DOM, allows footer to be seen, and automatically scrolls down towards results
 function displayResults(responseJson) {
-  console.log(responseJson)
   $('#results').empty();
   for (let i = 0; i < responseJson.results.length; i++) {
     $('#results').append(
-        `<form>
-          <ul>
+          `<ul>
             <li><a href="${responseJson.results[i].sourceUrl}" target="\_blank"><h2>${responseJson.results[i].title}</h2></a></li>
-            <img src="${responseJson.results[i].image}" class="result-img">
+            <img src="${responseJson.results[i].image}" class="result-img" alt="screenshot of finished recipe">
             <p class="result-info">${responseJson.results[i].summary}</p>
-            <p class="result-info">${responseJson.results[i].nutrition[0].title} ${responseJson.results[i].nutrition[0].amount}</p>
-            <p class="result-info"> ${responseJson.results[i].nutrition[1].title} ${responseJson.results[i].nutrition[1].amount}</p>
-            <p class="result-info">${responseJson.results[i].nutrition[2].title} ${responseJson.results[i].nutrition[2].amount}</p>
-            <p class="result-info">${responseJson.results[i].nutrition[3].title} ${responseJson.results[i].nutrition[3].amount}</p>
-            <img src="img/cooking.png" class="cooking-img">
-          </ul>
-        </form>`
-    )};
+            <p class="result-info">${responseJson.results[i].nutrition[0].title}: ${responseJson.results[i].nutrition[0].amount}</p>
+            <p class="result-info"> ${responseJson.results[i].nutrition[1].title}: ${responseJson.results[i].nutrition[1].amount} grams</p>
+            <p class="result-info">${responseJson.results[i].nutrition[2].title}: ${responseJson.results[i].nutrition[2].amount} grams</p>
+            <p class="result-info">${responseJson.results[i].nutrition[3].title}: ${responseJson.results[i].nutrition[3].amount} grams</p>
+            <img src="img/cooking.png" class="cooking-img" alt="illustrated cookware">
+           </ul>`)
+  };
+
+  if (responseJson.results.length <= 0) {
+    $('#results').append(
+        '<p>Hmmm...No results were found. Try another search!</p>'
+    )
+  }
 
   $('#hiddenFooter').removeClass('hiddenFooter');
 
-  const elmnt = document.getElementById("scroll");
-  elmnt.scrollIntoView({behavior: 'smooth'});
 }
 
 
-//Takes values from user inputs, watches for 'submit' button to be used, and then runs the getRecipes function
+//Adds fact content to the bottom of the DOM, under the footer
+function displayFactResult(responseJson){
+  $('#factResult').empty();
+  $('#factResult').append(
+    `
+     <p class="factBold">Here's a food fact:</p>
+     <p class="factItalic">${responseJson.text}</p>
+    `
+  )
+}
+
+
+//Takes values from user inputs, watches for 'submit' button to be used, and then runs the getRecipes function and getFact function
 function watchForm() {
   $('form').submit(event => {
     event.preventDefault();
@@ -108,6 +134,9 @@ function watchForm() {
     const maximFat = $('#max-fat').val();
 
     getRecipes(searchTerm, cuisine, diet, minumCalories, maximCalories, minumProtein, maximProtein, minumCarbs, maximCarbs, minumFat, maximFat);
+    getFact()
+     
+    
   });
 } 
 
