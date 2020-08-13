@@ -83,7 +83,8 @@ function displayResults(responseJson) {
   for (let i = 0; i < responseJson.results.length; i++) {
     $('#results').append(
           `<ul>
-            <li><a href="${responseJson.results[i].sourceUrl}" target="\_blank"><h2>${responseJson.results[i].title}</h2></a></li>
+            <li><a href="${responseJson.results[i].sourceUrl}" target="\_blank"><h2>${responseJson.results[i].title}</h2></a></li></ul>
+            <div class="resultsWidth">
             <img src="${responseJson.results[i].image}" class="result-img" alt="screenshot of finished recipe">
             <p class="result-info">${responseJson.results[i].summary}</p>
             <p class="result-info">${responseJson.results[i].nutrition[0].title}: ${responseJson.results[i].nutrition[0].amount}</p>
@@ -91,7 +92,8 @@ function displayResults(responseJson) {
             <p class="result-info">${responseJson.results[i].nutrition[2].title}: ${responseJson.results[i].nutrition[2].amount} grams</p>
             <p class="result-info">${responseJson.results[i].nutrition[3].title}: ${responseJson.results[i].nutrition[3].amount} grams</p>
             <img src="img/cooking.png" class="cooking-img" alt="illustrated cookware">
-           </ul>`)
+            </div>
+           `)
   };
 
   if (responseJson.results.length <= 0) {

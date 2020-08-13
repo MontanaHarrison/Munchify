@@ -111,6 +111,12 @@ ul{
   margin: 0 auto;
 }
 
+.resultsWidth{
+  width: 80%;
+  text-align: center;
+  margin: 0 auto;
+}
+
 #submit{
 margin-bottom: 40px;
 border: 1px solid black;
